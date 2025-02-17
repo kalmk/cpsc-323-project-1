@@ -10,3 +10,5 @@ def get_file_content():
     content = file.read()
     file.close()
     return content
+
+
