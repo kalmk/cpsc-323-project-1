@@ -1,7 +1,11 @@
+# All keywords are their own token, so their
+# corresponding output token is the same as the lexeme
 keywords = ["int", "return", "if", "switch", "float", "while", "else", "case",
             "char", "for", "goto", "unsigned", "main", "break", "continue", "void"]
 
 
-class lexer:
-    def __init__(self):
-        pass
+def get_file_content():
+    file = open("input.in", "r")
+    content = file.read()
+    print(content)
+    file.close()

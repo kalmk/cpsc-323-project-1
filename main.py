@@ -1,5 +1,9 @@
+import lexer
+
+
 def main():
-    print("Hello world!")
-    
+    lexer.get_file_content()
+
+
 if __name__ == "__main__":
     main()
