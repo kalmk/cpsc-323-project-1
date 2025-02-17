@@ -3,7 +3,8 @@
 keywords = ["int", "return", "if", "switch", "float", "while", "else", "case",
             "char", "for", "goto", "unsigned", "main", "break", "continue", "void"]
 
-character = ""
+operators = ["(", ")", "[", "]", "{", "}", ".", "+", "-", "*", "/", "%", "<",
+             ">", "=", ";", ",", "++", "--", "<=", ">=", "==", "&&", "||", "!", "&", "|"]
 
 
 def get_file_content():
@@ -14,20 +15,9 @@ def get_file_content():
     return content
 
 
-def look_up(char):
-    # Check operators and parentheses and return the token
-    if char == "(":
-        pass
-    if char == ")":
-        pass
-    if char == "[":
-        pass
-    if char == "]":
-        pass
-    if char == "{":
-        pass
-    if char == "}":
-        pass
+def check_keyword(word):
+    if word in keywords:
+        return word
 
 
 def scan_content(content):
