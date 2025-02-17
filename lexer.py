@@ -3,6 +3,8 @@
 keywords = ["int", "return", "if", "switch", "float", "while", "else", "case",
             "char", "for", "goto", "unsigned", "main", "break", "continue", "void"]
 
+character = ""
+
 
 def get_file_content():
     # Gets content from the input file (input.in)
@@ -12,3 +14,22 @@ def get_file_content():
     return content
 
 
+def look_up(char):
+    # Check operators and parentheses and return the token
+    if char == "(":
+        pass
+    if char == ")":
+        pass
+    if char == "[":
+        pass
+    if char == "]":
+        pass
+    if char == "{":
+        pass
+    if char == "}":
+        pass
+
+
+def scan_content(content):
+    for char in content:
+        pass

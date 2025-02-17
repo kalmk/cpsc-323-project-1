@@ -2,8 +2,8 @@ import lexer
 
 
 def main():
-    test = lexer.get_file_content()
-    print(test)
+    content = lexer.get_file_content()
+    lexer.scan_content(content)
 
 
 if __name__ == "__main__":
