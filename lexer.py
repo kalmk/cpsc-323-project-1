@@ -5,7 +5,8 @@ keywords = ["int", "return", "if", "switch", "float", "while", "else", "case",
 
 
 def get_file_content():
+    # Gets content from the input file (input.in)
     file = open("input.in", "r")
     content = file.read()
-    print(content)
     file.close()
+    return content
