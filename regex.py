@@ -12,7 +12,16 @@ def identifer_regex(string):
 
 
 def number_regex(string):
-    pass
+    # Check if first char is ([0 - 9])
+    if not (string[0].isdigit()):
+        return False
+
+     # Check if the rest of string is ([0 - 9])*
+    for char in string[1:]:
+        if not (string[0].isdigit()):
+            return False
+
+    return True
 
 
 def comment_regex(string):
