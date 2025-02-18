@@ -1,9 +1,9 @@
 from lexer import *
+from DFA import *
 
 
 def main():
-    source_code = get_source_code()
-    print(source_code)
+    pass
 
 
 if __name__ == "__main__":
