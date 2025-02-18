@@ -1,8 +1,9 @@
 from regex import *
+from scan import *
 
 
 def main():
-    print(identifer_regex("test77"))
+    scan_code()
 
 
 if __name__ == "__main__":
