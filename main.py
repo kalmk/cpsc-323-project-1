@@ -2,7 +2,8 @@ from lexer import *
 
 
 def main():
-    source_code = get_source_code()
+    filename = "input.in"
+    source_code = get_source_code(filename)
     print(source_code)
 
 

@@ -1,9 +1,10 @@
 
 
-def get_source_code():
+def get_source_code(filename):
     # Gets source code from input.in and removes all whitespaces
     # and combines all words into one single string to start lexing.
-    file = open("input.in", "r")
+    # file = open("input.in", "r")
+    file = open(filename, "r")
 
     dummy = file.read()
     source_code = dummy.split()
