@@ -1,9 +1,8 @@
-from DFA import *
+from regex import *
 
 
 def main():
-    pass
-
+    print(identifer_regex("test77"))
 
 
 if __name__ == "__main__":
