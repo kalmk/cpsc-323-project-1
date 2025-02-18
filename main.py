@@ -1,4 +1,3 @@
-from lexer import *
 from DFA import *
 
 
