@@ -30,7 +30,5 @@ def scan_code():
                 tokens.append("identifier")
         elif number_regex(word):
             tokens.append("number")
-        else:
-            tokens.append("UNKNOWN")
 
     return tokens
