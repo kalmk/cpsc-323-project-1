@@ -1,9 +1,9 @@
-import lexer
+from lexer import *
 
 
 def main():
-    content = lexer.get_file_content()
-    lexer.scan_content(content)
+    source_code = get_source_code()
+    print(source_code)
 
 
 if __name__ == "__main__":
