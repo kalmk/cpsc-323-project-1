@@ -24,6 +24,13 @@ def number_regex(word):
     return True
 
 
-def comment_regex(word):
-    # Will come back soon
-    pass
+def comment_regex(line):
+        # Check if the first 2 chars of the line is //
+        if not line.startswith("//"):
+            return False
+
+        # Check the end of the word for newline
+        if not line.endswith("\n"):
+            return False
+
+        return True
