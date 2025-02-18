@@ -1,28 +1,36 @@
-def identifer_regex(string):
+def identifer_regex(word):
     # Check if first char is ([a - Z])
-    if not (string[0].isalpha()):
+    if not (word[0].isalpha()):
         return False
 
-    # Check if the rest of the string is ([a - Z] | [0 - 9])*
-    for char in string[1:]:
+    # Check if the rest of the word is ([a - Z] | [0 - 9])*
+    for char in word[1:]:
         if not (char.isalpha() or char.isdigit()):
             return False
 
     return True
 
 
-def number_regex(string):
+def number_regex(word):
     # Check if first char is ([0 - 9])
-    if not (string[0].isdigit()):
+    if not (word[0].isdigit()):
         return False
 
-     # Check if the rest of string is ([0 - 9])*
-    for char in string[1:]:
-        if not (string[0].isdigit()):
+    # Check if the rest of word is ([0 - 9])*
+    for char in word[1:]:
+        if not (word[0].isdigit()):
             return False
 
     return True
 
 
-def comment_regex(string):
-    pass
+def comment_regex(word):
+    # Check if the first 2 chars of the word is //
+    if not word.startswith("//"):
+        return False
+
+    # Check the end of the word for newline
+    if not word.endswith("\n"):
+        return False
+
+    return True
