@@ -1,12 +1,61 @@
-keywords = ["int", "main"]
-unique = ["(", ")"]
+# # prototype
+
+keywords = {
+    'int': 'int',
+    'float': 'float',
+    'char': 'char',
+    'main': 'main',
+    'return': 'return',
+    'while': 'while',
+    'for': 'for',
+    'break': 'break',
+    'if': 'if',
+    'else': 'else',
+    'goto': 'goto',
+    'continue': 'continue',
+    'switch': 'switch',
+    'case': 'case',
+    'unsigned': 'unsigned',
+    'void': 'void'
+}
+
+
+pair = {
+    '(': 'leftParen',
+    ')': 'rightParen',
+    '[': 'leftBracket',
+    ']': 'rightBracket',
+    '{': 'leftBracket',
+    '}': 'rightBracket',
+    '.': 'dot',
+    '+': 'plus',
+    '-': 'minus',
+    '*': 'multiply',
+    '/': 'divide',
+    '%': 'modulus',
+    '<': 'lessThan',
+    '>': 'greaterThan',
+    '=': 'assignment',
+    ';': 'semicolon',
+    ',': 'comma',
+    '++': 'increment',
+    '--': 'decrement',
+    '<=': 'lessThanEq',
+    '>=': 'greaterThanEQ',
+    '==': 'logicEqual',
+    '&&': 'logicAnd',
+    '||': 'logicOr',
+    '!': 'logicNot',
+    '&': 'bitAnd',
+    '|': 'bitOr'
+}
+
 
 def scan_line():
     file = open("input.in", "r")
     lines = file.readlines()
 
     dummy = []
-
 
     for i in lines[0]:
         dummy.append(i)
@@ -16,20 +65,16 @@ def scan_line():
         if i == " ":
             dummy.pop()
 
-        if i in unique:
-            print("A unique!")
+        if i in pair:
+            print(pair[i])
             dummy.clear()
 
         if i == '\n':
-            print("Newline!")
+            print("newlines!")
             dummy.clear()
-
-        # if newline, we can use it for comments
 
         if ''.join(dummy) in keywords:
-            print("a keyword!")
+            print(keywords[''.join(dummy)])
             dummy.clear()
-
-        
 
 
