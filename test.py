@@ -1,4 +1,4 @@
-# # prototype
+# prototype
 
 keywords = {
     'int': 'int',
