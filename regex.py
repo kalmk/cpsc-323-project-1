@@ -1,5 +1,7 @@
 def identifer_regex(word):
     # check if first char is ([a - Z])
+    if (len(word) == 0):
+        return False
     if not (word[0].isalpha()):
         return False
 
@@ -12,6 +14,9 @@ def identifer_regex(word):
 
 
 def number_regex(word):
+    if (len(word) == 0):
+        return False
+
     # check if first char is ([0 - 9])
     if not (word[0].isdigit()):
         return False
