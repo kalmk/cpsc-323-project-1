@@ -1,4 +1,4 @@
-# prototype
+from checker import *
 
 keywords = {
     'int': 'int',
@@ -20,7 +20,7 @@ keywords = {
 }
 
 
-pair = {
+symbols = {
     '(': 'leftParen',
     ')': 'rightParen',
     '[': 'leftBracket',
@@ -56,6 +56,7 @@ def scan_line():
     lines = file.readlines()
 
     dummy = []
+    regex = []
 
    
     for line_number, line in enumerate(lines, start=1):
@@ -68,19 +69,22 @@ def scan_line():
             print(f"Dummy current: {dummy}")
 
             if char == " ":
+                print("in empty")
+                test_for_identifier = ''.join(dummy)
+                print(f"test: {test_for_identifier}")
+                if identifier_checker(test_for_identifier):
+                    regex.append(test_for_identifier)
+                    print(f"regex appended. {regex}")
                 dummy.pop()
-
-            if char in pair:
-                print(pair[char])
+            elif char in symbols:
+                print(symbols[char])
                 dummy.clear()
-
-            if char == '\n':
+            elif char == '\n':
                 print("newlines")
                 dummy.clear()
-
-            word = ''.join(dummy)
-            if word in keywords:
-                print(keywords[word])
-                dummy.clear()
-
+            else:
+                word = ''.join(dummy)
+                if word in keywords:
+                    print(keywords[word])
+                    dummy.clear()
 

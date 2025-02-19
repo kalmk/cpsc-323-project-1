@@ -1,5 +1,4 @@
-from regex import *
-from scan import *
+from checker import *
 from test import *
 
 
