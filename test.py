@@ -1,4 +1,5 @@
 keywords = ["int", "main"]
+unique = ["(", ")"]
 
 def scan_line():
     file = open("input.in", "r")
@@ -12,6 +13,14 @@ def scan_line():
 
         if i == " ":
             dummy.pop()
+
+        if i in unique:
+            print("A unique!")
+            dummy.clear()
+
+        if i == '\n':
+            print("Newline!")
+            dummy.clear()
 
         print(f"Dummy current: {dummy}")
 
