@@ -14,7 +14,9 @@ def scan_line():
             dummy.pop()
 
         print(f"Dummy current: {dummy}")
-        
+
+        # if newline, we can use it for comments
+
         if ''.join(dummy) in keywords:
             print("a keyword!")
             dummy.clear()
