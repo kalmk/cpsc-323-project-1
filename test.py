@@ -57,10 +57,13 @@ def scan_line():
 
     dummy = []
 
-    for i in lines[0]:
+    # choose a specific line to scan for now
+    for i in lines[2]:
         dummy.append(i)
 
         print(f"Dummy current: {dummy}")
+
+        # check if number is before alphabet, and if so, then it is invalid, etc..
 
         if i == " ":
             dummy.pop()
