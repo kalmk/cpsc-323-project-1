@@ -1,4 +1,4 @@
-keywords = ["int"]
+keywords = ["int", "main"]
 
 def scan_line():
     file = open("input.in", "r")
