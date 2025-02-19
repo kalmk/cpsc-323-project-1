@@ -11,6 +11,8 @@ def scan_line():
     for i in lines[0]:
         dummy.append(i)
 
+        print(f"Dummy current: {dummy}")
+
         if i == " ":
             dummy.pop()
 
@@ -22,12 +24,12 @@ def scan_line():
             print("Newline!")
             dummy.clear()
 
-        print(f"Dummy current: {dummy}")
-
         # if newline, we can use it for comments
 
         if ''.join(dummy) in keywords:
             print("a keyword!")
             dummy.clear()
+
+        
 
 
