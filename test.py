@@ -59,7 +59,7 @@ def scan_line():
 
    
     for line_number, line in enumerate(lines, start=1):
-        print("Line to scan:")
+        print(f"Line to scan: #{line_number}")
         print(f"{line}")
         for char in line:
             dummy.append(char)
