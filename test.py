@@ -57,27 +57,29 @@ def scan_line():
 
     dummy = []
 
-    # choose a specific line to scan for now
-    for i in lines[2]:
-        dummy.append(i)
+   
+    for line_number, line in enumerate(lines, start=1):
+        print("Line to scan:")
+        print(f"{line}")
+        for char in line:
+            dummy.append(char)
 
-        print(f"Dummy current: {dummy}")
+            print(f"Dummy current: {dummy}")
 
-        # check if number is before alphabet, and if so, then it is invalid, etc..
+            if char == " ":
+                dummy.pop()
 
-        if i == " ":
-            dummy.pop()
+            if char in pair:
+                print(pair[char])
+                dummy.clear()
 
-        if i in pair:
-            print(pair[i])
-            dummy.clear()
+            if char == '\n':
+                print("newlines!")
+                dummy.clear()
 
-        if i == '\n':
-            print("newlines!")
-            dummy.clear()
-
-        if ''.join(dummy) in keywords:
-            print(keywords[''.join(dummy)])
-            dummy.clear()
+            word = ''.join(dummy)
+            if word in keywords:
+                print(keywords[word])
+                dummy.clear()
 
 
