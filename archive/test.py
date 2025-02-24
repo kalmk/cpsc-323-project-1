@@ -69,7 +69,7 @@ def scan_line():
             print(f"Dummy current: {dummy}")
 
             if char == " ":
-                print("in empty")
+                # print("in empty")
                 test_for_identifier = ''.join(dummy)
                 print(f"test: {test_for_identifier}")
                 if identifier_checker(test_for_identifier):

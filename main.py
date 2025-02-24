@@ -1,9 +1,10 @@
-from checker import *
-from test import *
+from archive.checker import *
+from archive.test import *
+from archive.prot import *
 
 
 def main():
-    scan_line()
+    pass
 
 if __name__ == "__main__":
     main()
