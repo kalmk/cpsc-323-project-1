@@ -1,4 +1,4 @@
-def identifer_regex(word):
+def identifier_checker(word):
     # check if first char is ([a - Z])
     if (len(word) == 0):
         return False
@@ -13,7 +13,7 @@ def identifer_regex(word):
     return True
 
 
-def number_regex(word):
+def number_checker(word):
     if (len(word) == 0):
         return False
 
@@ -29,7 +29,7 @@ def number_regex(word):
     return True
 
 
-def comment_regex(line):
+def comment_checker(line):
         # check if the first 2 chars of the line is //
         if not line.startswith("//"):
             return False
