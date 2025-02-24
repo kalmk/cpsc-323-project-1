@@ -1,4 +1,4 @@
-from checker import *
+from archive.checker import *
 
 keywords = {
     'int': 'int',
