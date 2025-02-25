@@ -1,6 +1,3 @@
-from archive.checker import *
-from archive.test import *
-from archive.prot import *
 from scan_lines import *
 
 
@@ -25,13 +22,14 @@ def main():
 
             for char in line:
                 # Now we are reading each character in each line one by one
-
                 if ((char == "\n") or (char == " ")):
                     continue
                 
                 reject = False
                 # call function to change state according to input
                 # Ex. reject, curret_row, current_column = change_state(char, current_row, current_column)
+
+
 
                 if (reject):
                     # First, get back the appropriate token for chars_scanned
