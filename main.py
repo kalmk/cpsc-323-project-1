@@ -1,14 +1,14 @@
 from scan_lines import *
-
+from dfa import *
 
 def main():
     token_stream = ""
     chars_scanned = ""
 
     # Call function to make a copy of our DFA here
-    # Ex. our_dfa = make_dfa()
+    dfa_table = make_dfa()
 
-    # Current state can be derived by rows and columns, q0 = row 0
+    # Current state can be derived by rows (meaning state) and columns (meaning input), q0 = row 0
     current_row = 0
     current_column = 0
     token = ""
