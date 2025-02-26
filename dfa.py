@@ -1,10 +1,13 @@
 
+states = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31"]
 
 token_names = ["identifier", "number", "comment", "leftParen", "rightParen", "leftBracket", "rightBracket", "leftBrace", "rightBrace", "dot", "plus", "minus", "multiply", "divide", "modulus", "lessThan", "greaterThan", "assignment", "semicolon", "comma", "increment", "decrement", "lessThanE", "greaterThanE", "logicEual", "logicANd", "logicOr", "logicNot", "bitAnd", "bitOr"]
 
 token_keywords = ["int", "return", "if", "switch", "float", "while", "else", "case", "char", "for", "goto", "unsigned", "main", "break", "continue", "void"]
 
-dfa_table = [
+def make_dfa():
+
+    return [
     #  a-Z   0-9   -    !    =    +    <    >    &    |    (    )    {    }    *    /    ;    .    [    ]    ,    %
     ["1",  "4",  "2",  "5",  "9",  "7",  "11", "13", "15", "17", "19", "20", "21", "22", "23", "24", "26", "27", "28", "29", "30", "31"],  # 0
     ["1",  "1",  None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 1 Identifier/Variable
@@ -38,6 +41,4 @@ dfa_table = [
     [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 29 Right Bracket
     [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 30 Comma
     [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 31 Modulus
-]
-
-# need a current state and input variables to keep track
+    ]
