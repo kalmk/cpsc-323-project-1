@@ -7,13 +7,12 @@ def main():
     token_stream = ""
     chars_scanned = ""
 
-    # Call function to make a copy of our DFA here
-    dfa_table = make_dfa()
-
     # Current state can be derived by rows (meaning state) and columns (meaning input), q0 = row 0
     current_row = 0
     current_column = 0
     token = ""
+
+    # to access dfa table, use dfa.dfa_table
 
     input_lines = scan_lines("input.in")
     # print(input_lines)
