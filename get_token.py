@@ -10,7 +10,7 @@ def get_token(current_row):
     elif current_row == 4:
         return "integer"
     elif current_row == 5:
-        return "not"
+        return "logicNot"
     elif current_row == 6:
         return "notEqual"
     elif current_row == 7:
@@ -20,7 +20,7 @@ def get_token(current_row):
     elif current_row == 9:
         return "assignment"
     elif current_row == 10:
-        return "equality"
+        return "equalityComp"
     elif current_row == 11:
         return "lessThan"
     elif current_row == 12:
@@ -30,7 +30,7 @@ def get_token(current_row):
     elif current_row == 14:
         return "greaterThanEq"
     elif current_row == 15:
-        return "BitAnd"
+        return "bitAnd"
     elif current_row == 16:
         return "logicAnd"
     elif current_row == 17:
