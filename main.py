@@ -29,8 +29,9 @@ def main():
                 reject = False
                 # call function to change state according to input
                 # Ex. reject, curret_row, current_column = change_state(char, current_row, current_column)
-                reject, curret_row, current_column = change_state(char, current_row, current_column)
+                reject, state, current_column = change_state(char, current_row, current_column)
 
+                # print(reject, state)
 
                 if (reject):
                     # First, get back the appropriate token for chars_scanned
