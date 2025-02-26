@@ -43,7 +43,7 @@ def main():
                 # If our dfa didn't reject, append the char
                 chars_scanned += char
 
-                # print(char)
+                print(char)
 
         
         break
