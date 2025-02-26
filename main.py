@@ -1,4 +1,5 @@
 from scan_lines import *
+from change_state import *
 from dfa import *
 
 def main():
@@ -28,7 +29,7 @@ def main():
                 reject = False
                 # call function to change state according to input
                 # Ex. reject, curret_row, current_column = change_state(char, current_row, current_column)
-
+                reject, curret_row, current_column = change_state(char, current_row, current_column)
 
 
                 if (reject):
