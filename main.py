@@ -1,5 +1,6 @@
 from scan_lines import *
 from change_state import *
+from get_token import *
 
 def main():
     token_stream = ""
@@ -33,7 +34,7 @@ def main():
 
                 if (reject):
                     # First, get back the appropriate token for chars_scanned
-                    # Ex. token = get_token(current_row, current_column)
+                    token = get_token(current_row)
                     token_stream += token
 
                     token = ""
