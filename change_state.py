@@ -1,4 +1,4 @@
-from dfa import *
+import dfa
 
 def change_state(char, current_row, current_column):
     # Determine the column index for the current character
@@ -55,15 +55,13 @@ def change_state(char, current_row, current_column):
     # print(f"new column: {current_column}")
 
     # Get the next state from the DFA table using the current row and column
-    next_state = dfa_table[current_row][current_column]
+    next_state = dfa.dfa_table[current_row][current_column]
 
     if next_state is None:
         # If the transition is invalid (None), reject the token
-        return True, current_row, current_column
-
-    new_row = next_state  
+        return True, current_row, current_column 
 
     # print(f"new row (state): {new_row}")
     # print("______________________________")
 
-    return False, new_row, current_column
+    return False, next_state, current_column
