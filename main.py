@@ -1,4 +1,5 @@
 from scan_lines import *
+from dfa import make_dfa
 
 
 def main():
@@ -6,11 +7,11 @@ def main():
     chars_scanned = ""
 
     # Call function to make a copy of our DFA here
-    # Ex. our_dfa = make_dfa()
+    dfa_table = make_dfa()
 
     # Current state can be derived by rows and columns, q0 = row 0
-    current_row = 0
-    current_column = 0
+    current_row = 0 # row meaning state
+    current_column = 0 # column meaning input
     token = ""
 
     input_lines = scan_lines("input.in")
