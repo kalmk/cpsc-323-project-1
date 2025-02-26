@@ -2,7 +2,7 @@ from dfa import *
 
 def change_state(char, current_row, current_column):
     # Determine the column index for the current character
-    print(f"char: {char}")
+    # print(f"char: {char}")
 
     if char.isalpha():  # a-Z 
         current_column = 0
@@ -52,7 +52,7 @@ def change_state(char, current_row, current_column):
         # If an invalid character is encountered, return immediately
         return True, current_row, current_column
     
-    print(f"new column: {current_column}")
+    # print(f"new column: {current_column}")
 
     # Get the next state from the DFA table using the current row and column
     next_state = dfa_table[current_row][current_column]
@@ -63,7 +63,7 @@ def change_state(char, current_row, current_column):
 
     new_row = next_state  
 
-    print(f"new row: {new_row}")
-    print("______________________________")
+    # print(f"new row (state): {new_row}")
+    # print("______________________________")
 
     return False, new_row, current_column

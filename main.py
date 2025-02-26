@@ -1,5 +1,5 @@
 from scan_lines import *
-
+from change_state import *
 
 def main():
     token_stream = ""
@@ -28,7 +28,7 @@ def main():
                 reject = False
                 # call function to change state according to input
                 # Ex. reject, curret_row, current_column = change_state(char, current_row, current_column)
-
+                reject, curret_row, current_column = change_state(char, current_row, current_column)
 
 
                 if (reject):
@@ -43,7 +43,7 @@ def main():
                 # If our dfa didn't reject, append the char
                 chars_scanned += char
 
-                print(char)
+                # print(char)
 
         
         break
