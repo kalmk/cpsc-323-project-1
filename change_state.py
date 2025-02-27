@@ -63,9 +63,9 @@ def change_state(char, current_row, current_column):
     # print("Current column in change_state.py is", current_column)
     current_row = int(current_row)
     current_column = int(current_column)
-    print(f"Char is '{char}'. At [{current_row}, {current_column}] of dfa table is", dfa.dfa_table[current_row][current_column])
+    # print(f"Char is '{char}'. At [{current_row}, {current_column}] of dfa table is", dfa.dfa_table[current_row][current_column])
     next_state = dfa.dfa_table[current_row][current_column]
-    print("Next state is", next_state)
+    # print("Next state is", next_state)
 
     if next_state is None:
         # If the transition is invalid (None), reject the token

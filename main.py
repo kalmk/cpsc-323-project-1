@@ -2,6 +2,7 @@ from scan_lines import *
 from change_state import *
 from get_token import *
 from dfa import *
+from tokenizer import *
 
 def main():
     token_stream = ""
@@ -36,14 +37,18 @@ def main():
                 current_row = list1[1]
                 current_column = list1[2]
 
-                print(reject, current_row)
+                # print(reject, current_row)
 
                 if (reject):
                     # First, get back the appropriate token for chars_scanned
                     if (chars_scanned == " "):
                         continue
                     token = get_token(current_row)
-                    token_stream += token
+                    is_keyword = get_keyword(chars_scanned)
+                    print(f"keyword: {is_keyword}")
+                    if is_keyword != "IDENTIFIER":
+                        token = is_keyword
+                    token_stream = token_stream + " " + token
                     print(f"For chars '{chars_scanned}', saved '{token}' to the token stream")
 
                     token = ""

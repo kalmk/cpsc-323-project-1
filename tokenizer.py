@@ -1,6 +1,6 @@
 from dfa import token_keywords, token_names
 
-def get_token(lexeme):
+def get_keyword(lexeme):
     """
     Determines the token type of a given lexeme.
 
@@ -11,7 +11,7 @@ def get_token(lexeme):
         str: The token name (keyword or identifier).
     """
     if lexeme in token_keywords:
-        return f"KEYWORD({lexeme})"
+        return f"{lexeme}"
     else:
         return "IDENTIFIER"
 
