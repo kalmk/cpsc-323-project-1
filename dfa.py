@@ -3,7 +3,7 @@ token_names = ["identifier", "number", "comment", "leftParen", "rightParen", "le
 token_keywords = ["int", "return", "if", "switch", "float", "while", "else", "case", "char", "for", "goto", "unsigned", "main", "break", "continue", "void"]
 
 dfa_table = [ 
-#  a-Z   0-9   -    !    =    +    <    >    &    |    (    )    {    }    *    /    ;    .    [    ]    ,    %
+#  a-Z  0-9   -     !     =     +     <      >     &    |     (      )    {     }      *     /    ;    .    [    ]    ,    %
 ["1",  "4",  "2",  "5",  "9",  "7",  "11", "13", "15", "17", "19", "20", "21", "22", "23", "24", "26", "27", "28", "29", "30", "31"],  # 0
 ["1",  "1",  None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 1 Identifier/Variable
 [None, "4",  "3",  None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 2 Minus
@@ -28,7 +28,7 @@ dfa_table = [
 [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 21 Left Curly Brace
 [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 22 Right Curly Brace
 [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 23 Multiplication Operator
-[None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, "25", None, None, None, None, None],  # 24 Division
+[None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, "25", None, None, None, None, None, None],  # 24 Division
 [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 25 Comment
 [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 26 Semicolon
 [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 27 Dot
