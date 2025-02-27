@@ -61,11 +61,10 @@ def main():
                 chars_scanned += char
 
                 # print(char)
-
         
         break
 
-    print(token_stream)
+    print("Token stream:", token_stream)
 
 if __name__ == "__main__":
     main()
