@@ -23,31 +23,48 @@ def main():
 
             for char in line:
                 # Now we are reading each character in each line one by one
-                if ((char == "\n") or (char == " ")):
+                if (char == "\n"):
                     continue
+
                 
                 reject = False
                 # call function to change state according to input
                 # Ex. reject, curret_row, current_column = change_state(char, current_row, current_column)
-                reject, state, current_column = change_state(char, current_row, current_column)
+                list1 = change_state(char, current_row, current_column)
+
+                reject = list1[0]
+                current_row = list1[1]
+                current_column = list1[2]
+
+                print(reject, current_row)
 
                 if (reject):
                     # First, get back the appropriate token for chars_scanned
+                    if (chars_scanned == " "):
+                        continue
                     token = get_token(current_row)
                     token_stream += token
+                    print(f"For chars '{chars_scanned}', saved '{token}' to the token stream")
 
                     token = ""
                     chars_scanned = ""
-                    continue
+
+                    current_row = 0
+
+                    list1 = change_state(char, current_row, current_column)
+
+                    reject = list1[0]
+                    current_row = list1[1]
+                    current_column = list1[2]
 
                 # If our dfa didn't reject, append the char
                 chars_scanned += char
 
+                # print(char)
         
         break
 
-    print(chars_scanned)
-    print(token_stream)
+    print("Token stream:", token_stream)
 
 if __name__ == "__main__":
     main()
