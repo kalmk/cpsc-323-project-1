@@ -15,9 +15,9 @@ dfa_table = [
 [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 8 Increment Operator
 [None, None, None, None, "10", None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 9 Assignment Operator
 [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 10 Equality Comparison Operator
-[None, None, None, None, None, None, "12", None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 11 Less than
+[None, None, None, None, "12", None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 11 Less than
 [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 12 Less than, Equal to
-[None, None, None, None, None, None, None, "14", None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 13 Greater than
+[None, None, None, None, "14", None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 13 Greater than
 [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 14 Greater than, Equal to
 [None, None, None, None, None, None, None, None, "16", None, None, None, None, None, None, None, None, None, None, None, None, None],  # 15 Bit And
 [None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None, None],  # 16 Logic And
