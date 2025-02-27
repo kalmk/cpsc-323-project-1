@@ -70,6 +70,16 @@ def main():
         
         break
 
+    # After finishing scanning all characters, check if there's an unsaved token
+    if chars_scanned:
+        token = get_token(int(current_row))
+
+        is_keyword = get_keyword(chars_scanned)
+        if is_keyword != "IDENTIFIER":
+            token = is_keyword
+        token_stream = token_stream + " " + token
+        # print(f"For chars '{chars_scanned}', saved '{token}' to the token stream")   
+
     print("Token stream:", token_stream)
 
 if __name__ == "__main__":
