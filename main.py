@@ -25,6 +25,7 @@ def main():
                 # Now we are reading each character in each line one by one
                 if (char == "\n"):
                     continue
+
                 
                 reject = False
                 # call function to change state according to input
@@ -39,9 +40,11 @@ def main():
 
                 if (reject):
                     # First, get back the appropriate token for chars_scanned
+                    if (chars_scanned == " "):
+                        continue
                     token = get_token(current_row)
                     token_stream += token
-                    print(f"Saved '{token}' to the token stream")
+                    print(f"For chars '{chars_scanned}', saved '{token}' to the token stream")
 
                     token = ""
                     chars_scanned = ""
