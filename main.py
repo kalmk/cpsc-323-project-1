@@ -41,7 +41,7 @@ def main():
 
                 if (reject):
                     # First, get back the appropriate token for chars_scanned
-                    if (chars_scanned == " "):
+                    if ((chars_scanned == " ") or (chars_scanned == "")):
                         continue
                     token = get_token(current_row)
                     is_keyword = get_keyword(chars_scanned)
@@ -64,6 +64,7 @@ def main():
 
                 # If our dfa didn't reject, append the char
                 chars_scanned += char
+                chars_scanned = chars_scanned.strip()
 
                 # print(char)
         
