@@ -31,8 +31,6 @@ def main():
                 # Ex. reject, curret_row, current_column = change_state(char, current_row, current_column)
                 reject, state, current_column = change_state(char, current_row, current_column)
 
-                # print(reject, state)
-
                 if (reject):
                     # First, get back the appropriate token for chars_scanned
                     token = get_token(current_row)
@@ -45,10 +43,11 @@ def main():
                 # If our dfa didn't reject, append the char
                 chars_scanned += char
 
-                print(char)
-
         
         break
+
+    print(chars_scanned)
+    print(token_stream)
 
 if __name__ == "__main__":
     main()
