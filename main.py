@@ -12,15 +12,14 @@ def main():
     current_row = 0
     current_column = 0
     token = ""
-
-    # to access dfa table, use dfa.dfa_table
+    comment_detected = False
 
     input_lines = scan_lines("input.in")
-    # print(input_lines)
 
     while (True):
         # Go line by line
         for line in input_lines:
+            comment_detected = False
 
             for char in line:
                 # Now we are reading each character in each line one by one
@@ -30,14 +29,13 @@ def main():
                 
                 reject = False
                 # call function to change state according to input
-                # Ex. reject, curret_row, current_column = change_state(char, current_row, current_column)
                 list1 = change_state(char, current_row, current_column)
 
                 reject = list1[0]
                 current_row = list1[1]
                 current_column = list1[2]
 
-                # print(reject, current_row)
+                # print(char, reject, current_row)
 
                 if (reject):
                     # First, get back the appropriate token for chars_scanned
@@ -51,22 +49,26 @@ def main():
                     token_stream = token_stream + " " + token
                     print(f"For chars '{chars_scanned}', saved '{token}' to the token stream")
 
+                    if (token == "comment"):
+                        token = ""
+                        chars_scanned = ""
+                        current_row = 0
+                        comment_detected = True
+                        # Skip this line
+                        break
                     token = ""
                     chars_scanned = ""
-
                     current_row = 0
-
                     list1 = change_state(char, current_row, current_column)
 
                     reject = list1[0]
                     current_row = list1[1]
                     current_column = list1[2]
-
-                # If our dfa didn't reject, append the char
                 chars_scanned += char
                 chars_scanned = chars_scanned.strip()
 
-                # print(char)
+            if (comment_detected):
+                continue
         
         break
 
