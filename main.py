@@ -35,19 +35,15 @@ def main():
                 current_row = list1[1]
                 current_column = list1[2]
 
-                # print(char, reject, current_row)
-
                 if (reject):
                     # First, get back the appropriate token for chars_scanned
                     if ((chars_scanned == " ") or (chars_scanned == "")):
                         continue
                     token = get_token(current_row)
                     is_keyword = get_keyword(chars_scanned)
-                    # print(f"keyword: {is_keyword}")
                     if is_keyword != "IDENTIFIER":
                         token = is_keyword
                     token_stream = token_stream + " " + token
-                    # print(f"For chars '{chars_scanned}', saved '{token}' to the token stream")
 
                     if (token == "comment"):
                         token = ""
@@ -80,7 +76,6 @@ def main():
         if is_keyword != "IDENTIFIER":
             token = is_keyword
         token_stream = token_stream + " " + token
-        # print(f"For chars '{chars_scanned}', saved '{token}' to the token stream")   
 
     print("Token stream:", token_stream)
 

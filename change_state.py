@@ -2,10 +2,6 @@ import dfa
 
 def change_state(char, current_row, current_column):
     # Determine the column index for the current character
-    # print(f"char: {char}")
-
-    # if char.isalpha():  # a-Z 
-    #     current_column = 0
     if char.isdigit():  # 0-9 
         current_column = 1
     elif char == "-":  # -
@@ -56,22 +52,13 @@ def change_state(char, current_row, current_column):
         current_column = int(current_column)
         return True, current_row, current_column
     
-    # print(f"new column: {current_column}")
-
     # Get the next state from the DFA table using the current row and column
-    # print("Current row in change_state.py is", current_row)
-    # print("Current column in change_state.py is", current_column)
     current_row = int(current_row)
     current_column = int(current_column)
-    # print(f"Char is '{char}'. At [{current_row}, {current_column}] of dfa table is", dfa.dfa_table[current_row][current_column])
     next_state = dfa.dfa_table[current_row][current_column]
-    # print("Next state is", next_state)
 
     if next_state is None:
         # If the transition is invalid (None), reject the token
         return True, current_row, current_column 
-
-    # print(f"new row (state): {new_row}")
-    # print("______________________________")
 
     return [False, next_state, current_column]
