@@ -50,7 +50,7 @@ def change_state(char, current_row, current_column):
         # If an invalid character is encountered, return immediately
         current_row = int(current_row)
         current_column = int(current_column)
-        return True, current_row, current_column
+        return [True, current_row, current_column]
     
     # Get the next state from the DFA table using the current row and column
     current_row = int(current_row)
@@ -59,6 +59,6 @@ def change_state(char, current_row, current_column):
 
     if next_state is None:
         # If the transition is invalid (None), reject the token
-        return True, current_row, current_column 
+        return [True, current_row, current_column]
 
     return [False, next_state, current_column]
