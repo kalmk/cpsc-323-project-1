@@ -43,11 +43,11 @@ def main():
                         continue
                     token = get_token(current_row)
                     is_keyword = get_keyword(chars_scanned)
-                    print(f"keyword: {is_keyword}")
+                    # print(f"keyword: {is_keyword}")
                     if is_keyword != "IDENTIFIER":
                         token = is_keyword
                     token_stream = token_stream + " " + token
-                    print(f"For chars '{chars_scanned}', saved '{token}' to the token stream")
+                    # print(f"For chars '{chars_scanned}', saved '{token}' to the token stream")
 
                     if (token == "comment"):
                         token = ""
