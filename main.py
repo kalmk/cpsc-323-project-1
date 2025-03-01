@@ -3,8 +3,15 @@ from change_state import *
 from get_token import *
 from dfa import *
 from tokenizer import *
+import os
 
 def main(filename):
+    if not os.path.isfile(filename):
+        print(f"Error: File '{filename}' not found.")
+        print("Please make sure to properly pass the name of the file.")
+        print('EXAMPLE: main("case1.txt")')
+        return
+
     token_stream = ""
     chars_scanned = ""
 
@@ -84,5 +91,3 @@ def main(filename):
 
 if __name__ == "__main__":
     main("input.in")
-    print()
-    main("case1.txt")
