@@ -29,11 +29,10 @@ def main(filename):
             comment_detected = False
 
             for char in line:
+                comment_detected = False
                 # Now we are reading each character in each line one by one
                 if ((char == "\n") and (len(chars_scanned) == 1)):
                     reject = True
-                elif (char == "\n"):
-                    continue
 
                 
                 reject = False
@@ -53,6 +52,7 @@ def main(filename):
                     if is_keyword != "IDENTIFIER":
                         token = is_keyword
                     token_stream = token_stream + " " + token
+                    # DEBUG: print(f"For '{chars_scanned}', saved '{token}' to token_stream")
 
                     if (token == "comment"):
                         token = ""
@@ -85,6 +85,7 @@ def main(filename):
         if is_keyword != "IDENTIFIER":
             token = is_keyword
         token_stream = token_stream + " " + token
+        # DEBUG: print(f"For '{chars_scanned}', saved '{token}' to token_stream")
 
     print("Token stream:", token_stream)
 
