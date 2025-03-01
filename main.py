@@ -9,7 +9,7 @@ def main(filename):
     if not os.path.isfile(filename):
         print(f"Error: File '{filename}' not found.")
         print("Please make sure to properly pass the name of the file.")
-        print('EXAMPLE: main("case1.txt")')
+        print('EXAMPLE: main("case1.in")')
         return
 
     token_stream = ""
