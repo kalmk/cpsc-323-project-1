@@ -4,8 +4,7 @@ Requirements to run the program:
 - Python
 - a file for input
 
-Example to run for a Linux machine: 
-- python3 main.py
-
-or use r.sh
-
+To run in Linux: 
+- python3 main.py or use r.sh
+- make sure the filename is correct
+  - EXAMPLE: main("input.in") or main("case1.in)
