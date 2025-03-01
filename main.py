@@ -4,7 +4,7 @@ from get_token import *
 from dfa import *
 from tokenizer import *
 
-def main():
+def main(filename):
     token_stream = ""
     chars_scanned = ""
 
@@ -14,7 +14,7 @@ def main():
     token = ""
     comment_detected = False
 
-    input_lines = scan_lines("input.in")
+    input_lines = scan_lines(filename)
 
     while (True):
         # Go line by line
@@ -23,7 +23,9 @@ def main():
 
             for char in line:
                 # Now we are reading each character in each line one by one
-                if (char == "\n"):
+                if ((char == "\n") and (len(chars_scanned) == 1)):
+                    reject = True
+                elif (char == "\n"):
                     continue
 
                 
@@ -80,4 +82,5 @@ def main():
     print("Token stream:", token_stream)
 
 if __name__ == "__main__":
-    main()
+    main("input.in")
+    main("test_1.in")
