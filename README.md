@@ -2,7 +2,6 @@
  
 Requirements to run the program:
 - Python
-- a file for input
 
 To run in Linux: 
 - python3 main.py
