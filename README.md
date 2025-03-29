@@ -1,4 +1,4 @@
-# cpsc 323 project 1
+# Lexical analyzer
  
 Requirements to run the program:
 - Python
